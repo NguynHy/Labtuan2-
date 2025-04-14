@@ -1,0 +1,58 @@
+import java.util.Arrays;
+import java.util.Scanner;
+ 
+public class Bai01 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+ 
+        // a
+        for (int i = 0; i < n; ++i)
+            a[i] = sc.nextInt();
+ 
+        // b
+        for (int i = 0; i < n; ++i)
+            System.out.print(a[i] + " ");
+        System.out.println();
+ 
+        // c
+        int x = sc.nextInt();
+        int pos = -1;
+        for (int i = 0; i < n; ++i)
+            if (a[i] == x) {
+                System.out.print(i + " ");
+                pos = i;
+            }
+        if (pos == -1) 
+            System.out.println("not found");
+        else
+            System.out.println();
+ 
+        // d
+        int Max = a[0];
+        for (int i = 1; i < n; ++i)
+            if (a[i] > Max)
+                Max = a[i];
+        System.out.println(Max);
+ 
+        // e
+        int Min = a[0];
+        for (int i = 1; i < n; ++i)
+            if (a[i] < Min)
+                Min = a[i];
+        System.out.println(Min);
+ 
+        // f
+        for (int i = 0; i < n; ++i)
+            if (a[i] == Max) {
+                System.out.println(i);
+            }
+ 
+        // g
+        Arrays.sort(a);
+        for (int i = 0; i < n; ++i)
+            System.out.print(a[i] + " ");
+        System.out.println();
+    }
+}
