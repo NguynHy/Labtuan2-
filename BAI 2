@@ -1,0 +1,37 @@
+import java.util.Scanner;
+ 
+public class Bai02 {
+    private int length, width;
+ 
+    public void set() {
+        Scanner sc = new Scanner(System.in);
+        this.length = sc.nextInt();
+        this.width = sc.nextInt();
+    }
+ 
+    public void get() {
+        System.out.println("Length = " + this.length);
+        System.out.println("Width = " + this.width);
+    }
+ 
+    public int area() {
+        return this.length * this.width;
+    }
+ 
+    public int perimeter() {
+        return 2 * (this.length + this.width);
+    }
+ 
+    // trùng tên hàm toString kh được :(
+    public void __toString() {
+        this.get();
+        System.out.println("Perimeter = " + perimeter());
+        System.out.println("Area = " + area());
+    }
+ 
+    public static void main(String args[]) {
+        Bai02 instance = new Bai02();
+        instance.set();
+        instance.__toString();
+    }
+}
